@@ -32,22 +32,26 @@ public class List {
         // Your code goes here
         CharData newCdta = new CharData(chr);
         Node newNode = new Node(newCdta);
-        newNode.next = first;
-        first = newNode;
+        if(size == 0){
+            first = newNode;
+        }else{
+            newNode.next = first;
+            first = newNode;
+        }
         size++;
     }
     
     /** GIVE Textual representation of this list. */
     public String toString() {
         // Your code goes here
-        if (size==0) return "()";
+        if (size == 0) return "()";
         String s = "(";
         Node current = first;
         while (current != null) {
-            s+=current.cp.chr+ " ";
+            s += current.cp+ " ";
             current = current.next;
         }
-        return s.substring(0, s.length()-1) + ")";
+        return s.substring(0, s.length() - 1) + ")";
     }
 
     /** Returns the index of the first CharData object in this list

@@ -34,7 +34,7 @@ public class LanguageModel {
     /** Builds a language model from the text in the given file (the corpus). */
 	public void train(String fileName) {
 		// Your code goes here
-                
+            
         }
 	
 
@@ -55,7 +55,6 @@ public class LanguageModel {
             cd.p = probaliti;
             cd.cp = cumProbilitis;
         }
-
 	}
 
     // Returns a random character from the given probabilities list.
@@ -79,6 +78,7 @@ public class LanguageModel {
 	 */
 	public String generate(String initialText, int textLength) {
 		// Your code goes here
+        return "";
 	}
 
     /** Returns a string representing the map of this language model. */

@@ -34,17 +34,40 @@ public class LanguageModel {
     /** Builds a language model from the text in the given file (the corpus). */
 	public void train(String fileName) {
 		// Your code goes here
-	}
+                
+        }
+	
 
     // Computes and sets the probabilities (p and cp fields) of all the
 	// characters in the given list. */
 	public void calculateProbabilities(List probs) {				
 		// Your code goes here
+        int countChr = 0; 
+        //sum all characters
+        for (CharData cd : probs.toArray()){
+            countChr += cd.count;
+        }
+        //compute cp and p
+        double cumProbilitis = 0.0;
+        for(CharData cd : probs.toArray()){
+            double probaliti = (double) (cd.count / countChr);
+            cumProbilitis += probaliti;
+            cd.p = probaliti;
+            cd.cp = cumProbilitis;
+        }
+
 	}
 
     // Returns a random character from the given probabilities list.
 	public char getRandomChar(List probs) {
 		// Your code goes here
+        double r = randomGenerator.nextDouble();
+        for (CharData cd : probs.toArray()) {
+            if (r < cd.cp){
+                return cd.chr;
+            }  
+        }
+        return ' '; // if we doesn't find a suit character to return for this r
 	}
 
     /**

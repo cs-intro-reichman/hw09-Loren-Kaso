@@ -32,6 +32,7 @@ public class List {
         // Your code goes here
         CharData newCdta = new CharData(chr);
         Node newNode = new Node(newCdta);
+        //if the list empty CharData we add is the first else we add the beginning ,in 2case we add 1 to size 
         if(size == 0){
             first = newNode;
         }else{
@@ -43,14 +44,17 @@ public class List {
     
     /** GIVE Textual representation of this list. */
     public String toString() {
-        // Your code goes here
+        //Empty list
         if (size == 0) return "()";
         String s = "(";
         Node current = first;
+        //over all elements in the list 
         while (current != null) {
+        //current.cp this is the command say all CharData toString itself
             s += current.cp+ " ";
             current = current.next;
         }
+        //print the all list
         return s.substring(0, s.length() - 1) + ")";
     }
 
@@ -62,6 +66,7 @@ public class List {
         Node current = first;
         int index = 0;
         while (current != null) {
+        //if we find the CharData with same given chr return index of this CharData
             if(current.cp.chr == chr){
                 return index;
             }

@@ -50,7 +50,7 @@ public class LanguageModel {
         //compute cp and p
         double cumProbilitis = 0.0;
         for(CharData cd : probs.toArray()){
-            double probaliti = (double) (cd.count / countChr);
+            double probaliti = (double) (countChr / countChr);
             cumProbilitis += probaliti;
             cd.p = probaliti;
             cd.cp = cumProbilitis;

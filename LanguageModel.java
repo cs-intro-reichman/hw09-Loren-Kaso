@@ -42,6 +42,7 @@ public class LanguageModel {
                 if(in.isEmpty()){
                     break;
                 }
+                window += in.readChar();
             }
             // Processes the entire text, one character at a time
             while (!in.isEmpty()) {

@@ -117,7 +117,7 @@ public class LanguageModel {
         String geneText = initialText;
         //generate text chrcter , if lastSub not found break
         for (int i = 0; i < textLength; i++) {
-            String lastSub = geneText.substring(geneText.length() - initialText.length());
+            String lastSub = geneText.substring(geneText.length() - textLength);
             if(CharDataMap.containsKey(lastSub)){
                 char nextChr = getRandomChar(CharDataMap.get(lastSub));
                 geneText += nextChr; 
